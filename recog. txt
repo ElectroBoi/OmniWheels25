@@ -20,8 +20,7 @@ minH = 0.1*cam.get(4)
 
 while True:
 	ret, img = cam.read()
-	gray = cv2.c
-cv2.COLOR_BGR2GRAY)
+	gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 	faces = facecascade.detectMultiscale (gray, scaleFactor-1.2, minNeighbors=5, minsize=(int(min), int(min))) 
 	for (x, y, w, h) in faces:
@@ -41,6 +40,7 @@ cv2.COLOR_BGR2GRAY)
 	k = cv2.waitKey(10) & 0xff #'esc' buat keluar
 	if k == 27:
 		break
+
 print("\n Keluar program...")
 cam.release()
 cv2.destroyAllwindows()
